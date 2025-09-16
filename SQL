@@ -1,0 +1,37 @@
+SELECT
+  *
+FROM
+  "RETAIL"."PUBLIC"."SHOP"
+
+  SELECT count(distinct transaction_id) as number_of_sales,
+         count(distinct customer_id) as number_of_custome,
+    
+         date as purchase_date,
+         dayname(date) as day_name,
+         monthname(date) as day_name,
+         dayofmonth(date) as day_of_month,
+
+         CASE
+             when age between 0 and 12 then 'young'
+             when age between 13 and 20 then 'teenage'
+             when age between 21 and 35 then 'youth'
+             when age between 36 and 50 then 'adult'
+         Else 'too old'
+         End as age_bucket,
+
+         CASE
+             when total_amount between 0 and 100 then 'low spend'
+             when total_amount between 100 and 200 then 'med spend'
+             when total_amount > 200 then 'high spend' 
+         End as spend_budget,
+
+         Sum(quantity) as unit_sold,
+         Sum(total_amount) as total_revenue,
+
+         Product_category,
+         Gender,
+
+From "RETAIL"."PUBLIC"."SHOP"
+Group by all;
+        
+        
