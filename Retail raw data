@@ -999,3 +999,4 @@ Transaction ID,Date,Customer ID,Gender,Age,Product Category,Quantity,Price per U
 998,2023-10-29,CUST998,Female,23,Beauty,4,25,100
 999,2023-12-05,CUST999,Female,36,Electronics,3,50,150
 1000,2023-04-12,CUST1000,Male,47,Electronics,4,30,120
+
